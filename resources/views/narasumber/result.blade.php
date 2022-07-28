@@ -1,5 +1,5 @@
 <?php
-// dd($modelGejala)
+// dd($result)
 ?>
 <!DOCTYPE html>
 <html>
@@ -129,6 +129,7 @@ button:hover {
             <p>
                 Penyakit yang di derita tanaman hias monstera adalah: <b>{{$result->txt['nama'] ?? null}}</b> dengan kemungkinan sebesar <b>{{$result->txt['nilai'] ?? 0}}%</b>
             </p>
+            <b>Solusi :</b> <p>{{$result->txt['solusi'] ?? null}}</p>
         </div>
         <div style="overflow:auto;">
             <div style="">

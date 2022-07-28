@@ -12,4 +12,9 @@ class Penyakit extends Model
         'solusi',
         'kode',
     ];
+
+    public function rule()
+    {
+        return $this->hasOne(Rule::class, 'penyakit_id', 'id');
+    }
 }

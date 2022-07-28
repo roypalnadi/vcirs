@@ -153,6 +153,7 @@ class Vcirs extends Controller
         $this->txt = [
             'nama' => $modelPenyakit->nama,
             'nilai' => round($penyakit['persen'] ?? 0, 2),
+            'solusi' => $modelPenyakit->solusi,
         ];
 
         $modelNarasumber = Narasumber::where('id', $this->id)->first();

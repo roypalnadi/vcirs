@@ -45,12 +45,12 @@ Route::get('/gejala/view/{id}', [App\Http\Controllers\GejalaController::class, '
 Route::post('/gejala/edit', [App\Http\Controllers\GejalaController::class, 'edit'])->name('gejalaEdit');
 Route::get('/gejala/delete/{id}', [App\Http\Controllers\GejalaController::class, 'delete'])->name('gejaladelete');
 
-Route::get('/rule/list', [App\Http\Controllers\RuleController::class, 'list'])->name('ruleList');
-Route::get('/rule/add', [App\Http\Controllers\RuleController::class, 'add'])->name('ruleAdd');
-Route::post('/rule/store', [App\Http\Controllers\RuleController::class, 'store'])->name('ruleStore');
-Route::get('/rule/view/{id}', [App\Http\Controllers\RuleController::class, 'view'])->name('ruleView');
-Route::post('/rule/edit', [App\Http\Controllers\RuleController::class, 'edit'])->name('ruleEdit');
-Route::get('/rule/delete/{id}', [App\Http\Controllers\RuleController::class, 'delete'])->name('ruledelete');
+Route::get('/rule/list', [App\Http\Controllers\RuleController::class, 'listV2'])->name('ruleList');
+Route::get('/rule/add', [App\Http\Controllers\RuleController::class, 'addV2'])->name('ruleAdd');
+Route::post('/rule/store', [App\Http\Controllers\RuleController::class, 'storeV2'])->name('ruleStore');
+Route::get('/rule/view/{id}', [App\Http\Controllers\RuleController::class, 'viewV2'])->name('ruleView');
+Route::post('/rule/edit', [App\Http\Controllers\RuleController::class, 'editV2'])->name('ruleEdit');
+Route::get('/rule/delete/{id}', [App\Http\Controllers\RuleController::class, 'deleteV2'])->name('ruledelete');
 
 Route::get('/pilihan/list', [App\Http\Controllers\PilihanController::class, 'list'])->name('pilihanList');
 Route::get('/pilihan/add', [App\Http\Controllers\PilihanController::class, 'add'])->name('pilihanAdd');
