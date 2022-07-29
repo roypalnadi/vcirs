@@ -33,6 +33,19 @@ class HomeController extends Controller
         return view('narasumber.index', compact('modelGejala', 'modelPilihan'));
     }
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function indexV2()
+    {
+        $modelGejala = Gejala::orderBy('id')->get();
+        $modelPilihan = Pilihan::all();
+
+        return view('narasumber.indexV2', compact('modelGejala', 'modelPilihan'));
+    }
+
     public function save(Request $request)
     {
         $modelGejala = Gejala::orderBy('id')->get();
@@ -43,7 +56,7 @@ class HomeController extends Controller
         $model->save();
 
         foreach ($modelGejala as $key => $gejala) {
-            $pilihan = $modelPilihan->where('id', $request->pilihan[$key])->first();
+            $pilihan = $modelPilihan->where('id', $request->{'pilihan'.$key})->first();
 
             $data = new PilihanNarasumber();
             $data->gejala_id = $gejala->id;
@@ -61,7 +74,7 @@ class HomeController extends Controller
     {
         $result = $this->proses($request->id);
 
-        return view('narasumber.result', compact('result'));
+        return view('narasumber.resultV2', compact('result'));
     }
 
     public function proses($id)
